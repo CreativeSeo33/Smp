@@ -37,8 +37,32 @@ module.exports = function (grunt) {
         'js/js.min.js': ['js/bootstrap.min.js', 'js/jquery.fancybox.js', 'js/helpers/jquery.fancybox-thumbs.js', 'js/jquery.mousewheel-3.0.6.pack.js', 'js/jquery.maskedinput.min.js', 'js/jquery.carouFredSel-6.1.0-packed.js', 'js/jquery.bxslider.min.js']
       }
     }
-  }
+  },
+       includereplace: {
+    your_target: {
+      options: {
+        // Task-specific options go here.
+      },
+      // Files to perform replacements and includes with
+      src: 'index1.html',
+      // Destination directory to copy files to
+      dest: 'css/'
+    }
+  } ,
+  htmlmin: {                                     // Task
+    dist: {                                      // Target
+      options: {                                 // Target options
         
+        collapseWhitespace: true
+      },
+      files: {                                   // Dictionary of files
+        'css/index1.html': 'index1.html'     // 'destination': 'source'
+       
+      }
+    
+    
+    }
+  }
        
     });
  
@@ -47,8 +71,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    
+	grunt.loadNpmTasks('grunt-include-replace');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     
  
-    grunt.registerTask('default', ['cssmin', 'imagemin', 'uglify']);
+    grunt.registerTask('default', ['htmlmin']);
 };
