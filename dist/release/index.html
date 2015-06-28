@@ -4,16 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="<?php echo HTTP_SERVER;?>">
     <title>СМП-245 - строительная компания</title>
     <meta name="description" content="@@description" />
     <meta name="keywords" content="@@keywords" />
     <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 	<!-- Bootstrap -->
-	<!--<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/jquery.fancybox.css">-->
-    <link href="css/style.min.css" rel="stylesheet">
+    
+    <!-- build:remove:dev -->
+    <link href="/css/style.min.css" rel="stylesheet">
+    <!-- /build -->
+
+    
+    
+    
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -98,26 +101,26 @@
       <a class="dropdown-toggle visible-xs visible-sm" data-toggle="dropdown" href="javascript:void(0);">Строительство <span class="caret"></span></a>
       <a class="dropdown-toggle hidden-xs hidden-sm" href="javascript:void(0);">Строительство <span class="caret"></span></a>
           <ul class="dropdown-menu text-dropdown-menu" role="menu">
-          <li><a href="<?php echo HTTP_SERVER;?>zabivka-svay/">Сваебойные работы</a></li>
-            <li><a href="<?php echo HTTP_SERVER;?>grazhdanskoe-stroitelstvo/">Гражданское строительство</a></li>
-			<li><a href="<?php echo HTTP_SERVER;?>promyshlennoe-stroitelstvo/">Промышленное строительство</a></li>
-			<li><a href="<?php echo HTTP_SERVER;?>zheleznodorozhnoe-stroitelstvo/">Железнодорожное строительство</a></li>
+          <li><a href="/zabivka-svay/">Сваебойные работы</a></li>
+            <li><a href="/grazhdanskoe-stroitelstvo/">Гражданское строительство</a></li>
+			<li><a href="/promyshlennoe-stroitelstvo/">Промышленное строительство</a></li>
+			<li><a href="/zheleznodorozhnoe-stroitelstvo/">Железнодорожное строительство</a></li>
 			
           </ul>
         </li>
-        <li><a href="<?php echo HTTP_SERVER;?>arenda-spectehniki/"><span>Аренда спецтехники</span></a></li>
+        <li><a href="/arenda-spectehniki/"><span>Аренда спецтехники</span></a></li>
 
-        <li><a href="<?php echo HTTP_SERVER;?>objects/" id="one"><span>Объекты</span></a></li>
+        <li><a href="/objects/" id="one"><span>Объекты</span></a></li>
 		<li class="dropdown">
       <a class="dropdown-toggle visible-xs visible-sm" data-toggle="dropdown" href="javascript:void(0);">Лицензии <span class="caret"></span></a>
       <a class="dropdown-toggle hidden-xs hidden-sm" href="javascript:void(0);">Лицензии <span class="caret"></span></a>
 		  <ul class="dropdown-menu text-dropdown-menu" role="menu">
-            <li><a href="<?php echo HTTP_SERVER;?>licenses/smp245/">СМП-245</a></li>
-			<li><a href="<?php echo HTTP_SERVER;?>licenses/smp245-energy/">СМП-245 Энерго</a></li>
-			<li><a href="<?php echo HTTP_SERVER;?>licenses/" target="_blank">ЦПОиР</a></li>
+            <li><a href="/licenses/smp245/">СМП-245</a></li>
+			<li><a href="/licenses/smp245-energy/">СМП-245 Энерго</a></li>
+			<li><a href="/licenses/" target="_blank">ЦПОиР</a></li>
           </ul>
 		</li>
-        <li><a href="<?php echo HTTP_SERVER;?>contacts/"><span>Контакты</span></a></li>
+        <li><a href="/contacts/"><span>Контакты</span></a></li>
         <li><a href="http://xn--h1alcg0a.xn--p1ai/" rel="nofollow" target="_blank"><span>Проектные работы</span></a></li>   
        </ul> 
     </div>
@@ -309,20 +312,20 @@
 		<div class="col-md-4">
 		  <div class="foot-zag">Строительство</div>
 			<ul>
-				<li><a href="http://www.xn---245-u5dsm.xn--p1ai/grazhdanskoe-stroitelstvo/">Гражданское строительство</a></li>
-				<li><a href="http://www.xn---245-u5dsm.xn--p1ai/promyshlennoe-stroitelstvo/">Промышленное строительство</a></li>
-				<li><a href="http://www.xn---245-u5dsm.xn--p1ai/zheleznodorozhnoe-stroitelstvo/">Железнодорожное строительство</a></li>
-				<li><a href="http://www.xn---245-u5dsm.xn--p1ai/zabivka-svay/">Сваебойные работы</a></li>
+				<li><a href="/grazhdanskoe-stroitelstvo/">Гражданское строительство</a></li>
+				<li><a href="/promyshlennoe-stroitelstvo/">Промышленное строительство</a></li>
+				<li><a href="/zheleznodorozhnoe-stroitelstvo/">Железнодорожное строительство</a></li>
+				<li><a href="/zabivka-svay/">Сваебойные работы</a></li>
 			</ul>
 		</div>
 		<div class="col-md-4">
 		    <div class="foot-zag"></div>
 			<ul>
-			    <li><a href="http://www.xn---245-u5dsm.xn--p1ai/arenda-spectehniki/">Аренда спецтехники</a></li>
-				<li><a href="http://www.xn---245-u5dsm.xn--p1ai/licenses/">Лицензии</a></li>
-				<li><a href="http://www.xn---245-u5dsm.xn--p1ai/objects/">Объекты</a></li>
-				<li><a href="http://xn--h1alcg0a.xn--p1ai/" rel="nofollow" target="_blank">Проектные работы</a></li>
-				<li><a href="http://www.xn---245-u5dsm.xn--p1ai/contacts/">Контакты</a></li>
+			    <li><a href="/arenda-spectehniki/">Аренда спецтехники</a></li>
+				<li><a href="/licenses/">Лицензии</a></li>
+				<li><a href="/objects/">Объекты</a></li>
+				<li><a href="/" rel="nofollow" target="_blank">Проектные работы</a></li>
+				<li><a href="/contacts/">Контакты</a></li>
 			</ul>
 		</div>	
 	</div>
@@ -334,7 +337,7 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="js/js.min.js"></script>
+<script src="/js/js.min.js"></script>
 <!--<script src="js/bootstrap.min.js"></script>-->
 <!--<script src="js/jquery.fancybox.js"></script>
 <script src="js/helpers/jquery.fancybox-thumbs.js"></script> 

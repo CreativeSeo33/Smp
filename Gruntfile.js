@@ -1,4 +1,6 @@
 module.exports = function (grunt) {
+	
+	
  
     grunt.initConfig({
         app: {
@@ -31,6 +33,7 @@ module.exports = function (grunt) {
   },
   target: {
     files: {
+		expand: true,
       'release/css/style.min.css': ['css/bootstrap.min.css', 'css/style.css', 'css/jquery.fancybox.css', 'css/jquery.bxslider.css']
     }
   }
@@ -48,7 +51,7 @@ module.exports = function (grunt) {
                         
       // Destination directory to copy files to
 	  files: [{
-	  src: ['*/*.html', '!blocks/*.html'],
+	  src: ['*/*.html', '!blocks/*.html', '!dest/*.html'],
       dest: '<%= app.dist %>/<%= app.baseurl %>',
 	  
 	  expand: true},
@@ -75,32 +78,40 @@ module.exports = function (grunt) {
     }
   },
 
-borschik: {
-	"paths" : {
-            "./": "/",
-            "blocks/": "//vptorg.ru/css/"
-			
-        }
-},
-connect: {
-            options: {
-                port: 9000,
-                livereload: 35729,
-                // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
-            },
-            dist: {
-                options: {
-                    open: {
-                        target: 'http://localhost:9000/<%= app.baseurl %>'
-                    },
-                    base: [
-                        '<%= app.dist %>',
-                        '.tmp'
-                    ]
-                }
-            }
+
+    connect: {
+    server: {
+      options: {
+		  
+        port: 9001,
+		keepalive: true,
+        base: 'release/',
+		open: {
+			target: 'http://localhost:9001/',
+		}
+      }
+    }
+ 
         },
+		
+
+	processhtml: {
+      dist:{
+        options: {
+          process: true,
+        },
+        files: [
+          {
+          expand: true,     
+          cwd: 'release/',   
+          src: ['**/*.html'],
+          dest: 'dist/',  
+          ext: '.html'
+        },
+        ],
+	  }
+    },	
+	
    critical: {
     test: {
         options: {
@@ -137,6 +148,10 @@ connect: {
 	grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-borschik');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-processhtml');
+	
+	grunt.registerTask('server', ['connect:server']);
  
-    grunt.registerTask('default', ['includereplace']);
+    grunt.registerTask('dev', ['processhtml:dev']); 
+    grunt.registerTask('default', ['processhtml']);
 };

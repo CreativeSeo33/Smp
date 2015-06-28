@@ -44,12 +44,17 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<!-- build:remove:dev -->
 <script src="@@url/js/js.min.js"></script>
-<!--<script src="js/bootstrap.min.js"></script>-->
-<!--<script src="js/jquery.fancybox.js"></script>
-<script src="js/helpers/jquery.fancybox-thumbs.js"></script> 
-<script src="js/jquery.mousewheel-3.0.6.pack.js"></script>
-<script src="js/jquery.maskedinput.min.js"></script> -->
+<!-- /build -->
+
+<!-- build:remove:dist -->
+<script src="@@url/js/bootstrap.min.js"></script>
+<script src="@@url/js/jquery.fancybox.js"></script>
+<script src="@@url/js/helpers/jquery.fancybox-thumbs.js"></script> 
+<script src="@@url/js/jquery.mousewheel-3.0.6.pack.js"></script>
+<script src="@@url/js/jquery.maskedinput.min.js"></script>
+<!-- /build -->
 <script type="text/javascript">
 $(document).ready(function() {
 	$(".fancybox-thumb").fancybox({

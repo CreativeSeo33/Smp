@@ -1,3 +1,4 @@
+google-site-verification: googled38ed078eef1e402.html
 @@include('/blocks/meta.html', {"title": "СМП-245 - строительная компания", "url": ""})
 @@include('/blocks/header.html', {"url": ""})
 <section id="pixroll">
@@ -164,3 +165,8 @@
 </div>
 
 @@include('/blocks/footer.html', {"url": ""})
+
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+<body>Verification: 726f5123fc6c49df</body>
+</html>

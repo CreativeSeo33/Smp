@@ -15,6 +15,7 @@
     "grunt-critical": "^0.1.5",
     "grunt-criticalcss": "^0.5.0",
     "grunt-include-replace": "^3.0.0",
+    "grunt-processhtml": "^0.3.8",
     "grunt-remove-logging": "latest",
     "grunt-replace": "^0.9.2"
   }
