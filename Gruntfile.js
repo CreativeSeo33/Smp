@@ -78,11 +78,29 @@ module.exports = function (grunt) {
 borschik: {
 	"paths" : {
             "./": "/",
-            "css/": "//vptorg.ru/css/",
-			"js/": "//vptorg.ru/js/"
+            "blocks/": "//vptorg.ru/css/"
+			
         }
 },
-
+connect: {
+            options: {
+                port: 9000,
+                livereload: 35729,
+                // change this to '0.0.0.0' to access the server from outside
+                hostname: 'localhost'
+            },
+            dist: {
+                options: {
+                    open: {
+                        target: 'http://localhost:9000/<%= app.baseurl %>'
+                    },
+                    base: [
+                        '<%= app.dist %>',
+                        '.tmp'
+                    ]
+                }
+            }
+        },
    critical: {
     test: {
         options: {
@@ -118,6 +136,7 @@ borschik: {
     grunt.loadNpmTasks('grunt-critical');
 	grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-borschik');
+	grunt.loadNpmTasks('grunt-contrib-connect');
  
-    grunt.registerTask('default', ['includereplace']);
+    grunt.registerTask('default', ['includereplace', 'critical']);
 };
