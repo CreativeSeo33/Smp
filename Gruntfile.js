@@ -78,7 +78,8 @@ module.exports = function (grunt) {
 borschik: {
 	"paths" : {
             "./": "/",
-            "css/": "//vptorg.ru/css/"
+            "css/": "//vptorg.ru/css/",
+			"js/": "//vptorg.ru/js/"
         }
 },
 
@@ -118,5 +119,5 @@ borschik: {
 	grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-borschik');
  
-    grunt.registerTask('default', ['includereplace', 'critical']);
+    grunt.registerTask('default', ['includereplace']);
 };
