@@ -1,7 +1,11 @@
 module.exports = function (grunt) {
  
     grunt.initConfig({
-        
+        app: {
+            app: '',
+            dist: 'release',
+            baseurl: ''
+        },
         
         imagemin: {
             dynamic: {
@@ -40,16 +44,19 @@ module.exports = function (grunt) {
   },
        includereplace: {
     dist: {
-    options: {
-      globals: {
-		includesDir: 'inc/'
-      },
-    },
-      // Files to perform replacements and includes with
-      src: '*/*.html',
+    
+                        
       // Destination directory to copy files to
-      dest: 'release/',
-	  expand: true
+	  files: [{
+	  src: ['*/*.html'],
+      dest: '<%= app.dist %>/<%= app.baseurl %>',
+	  cwd: '<%= app.dist %>/<%= app.baseurl %>',
+	  expand: true},
+	  {
+	  src: ['*.html'],  
+      dest: 'release/'	  
+	  }
+	  ]
     }
   } ,
   htmlmin: {                                     // Task
@@ -72,7 +79,7 @@ module.exports = function (grunt) {
     test: {
         options: {
 			inline: true,
-            base: 'release/',
+            base: './',
 			
             css: [
                 
@@ -82,8 +89,12 @@ module.exports = function (grunt) {
             height: 1000
         },
 		
-        src: 'release/index.html',
-        dest: 'release/index.html'
+       files: [{
+                    expand: true,
+                    cwd: '<%= app.dist %>/<%= app.baseurl %>',
+                    src: ['**/*.html'],
+                    dest: '<%= app.dist %>/<%= app.baseurl %>'
+                }]
     }
 }
        
@@ -98,5 +109,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-critical');
  
-    grunt.registerTask('default', ['includereplace', 'critical', 'cssmin', 'uglify']);
+    grunt.registerTask('default', ['includereplace', 'critical']);
 };
