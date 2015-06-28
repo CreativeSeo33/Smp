@@ -27,36 +27,42 @@ module.exports = function (grunt) {
   },
   target: {
     files: {
-      'css/style.min.css': ['css/bootstrap.min.css', 'css/style.css', 'css/jquery.fancybox.css', 'css/jquery.bxslider.css']
+      'release/css/style.min.css': ['css/bootstrap.min.css', 'css/style.css', 'css/jquery.fancybox.css', 'css/jquery.bxslider.css']
     }
   }
 },
         uglify: {
     my_target: {
       files: {
-        'js/js.min.js': ['js/bootstrap.min.js', 'js/jquery.fancybox.js', 'js/helpers/jquery.fancybox-thumbs.js', 'js/jquery.mousewheel-3.0.6.pack.js', 'js/jquery.maskedinput.min.js', 'js/jquery.carouFredSel-6.1.0-packed.js', 'js/jquery.bxslider.min.js']
+        'release/js/js.min.js': ['js/bootstrap.min.js', 'js/jquery.fancybox.js', 'js/helpers/jquery.fancybox-thumbs.js', 'js/jquery.mousewheel-3.0.6.pack.js', 'js/jquery.maskedinput.min.js', 'js/jquery.carouFredSel-6.1.0-packed.js', 'js/jquery.bxslider.min.js']
       }
     }
   },
        includereplace: {
-    your_target: {
-      options: {
-        // Task-specific options go here.
+    dist: {
+    options: {
+      globals: {
+        var1: 'one',
+        var2: 'two',
+        var3: 'three'
       },
+    },
       // Files to perform replacements and includes with
-      src: 'index1.html',
+      src: '*.html',
       // Destination directory to copy files to
-      dest: 'css/'
+      dest: 'release/',
+	  expand: true
     }
   } ,
   htmlmin: {                                     // Task
     dist: {                                      // Target
       options: {                                 // Target options
         
+        removeComments: true,
         collapseWhitespace: true
       },
       files: {                                   // Dictionary of files
-        'css/index1.html': 'index1.html'     // 'destination': 'source'
+        '*index.html': 'release/index.html'     // 'destination': 'source'
        
       }
     
@@ -93,5 +99,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-critical');
  
-    grunt.registerTask('default', ['cssmin']);
+    grunt.registerTask('default', ['includereplace', 'cssmin', 'uglify']);
 };

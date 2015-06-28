@@ -1,4 +1,3 @@
-<?php include($root.'/config.php');?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -6,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="<?php echo HTTP_SERVER;?>">
-    <title><?php echo $title; ?></title>
-    <meta name="description" content="<?php echo $description; ?>" />
-    <meta name="keywords" content="<?php echo $keywords; ?>" />
+    <title>СМП-245 - строительная компания</title>
+    <meta name="description" content="@@description" />
+    <meta name="keywords" content="@@keywords" />
     <link href="/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
 	<!-- Bootstrap -->
 	<!--<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +20,48 @@
     
 </head>
 <body>
-<?php include($root."/blocks/modal-zakaz.php"); ?> 
+<!-- Modal Contents -->
+
+<div id="modal-zakaz" class="modal fade modal-dialog-zakaz">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div class="modal-header">
+  <button type="button" class="close close-mod" data-dismiss="modal" aria-hidden="true">×</button>
+  <h4 class="modal-title">Оставить заявку</h4>
+</div>
+<div class="modal-body">
+<div class="contact-form">
+  <form class="center-block" accept-charset="utf-8">
+    <input type="hidden"  />
+    <div class="form-all">
+      <ul class="form-section">
+        <li class="form-line">
+          <label class="form-label-top"> ФИО<span class="form-required">*</span> </label>
+          <div class="form-input-wide">
+            <input type="text" class="form-textbox" id="name" size="40" placeholder="Ваше имя" required="required">
+          </div>
+        </li>
+        <li class="form-line">
+          <label class="form-label-top"> Телефон<span class="form-required">*</span> </label>
+          <div class="form-input-wide">
+            <input type="text" class="form-textbox" size="40" id="tel" placeholder="+7 (___) ___-___" required="required">
+          </div>
+        </li>
+      </ul>
+    </div>
+  </form>
+</div>
+<!--contact-form-->
+</div>
+		  
+          <div class="modal-footer modal-otpr">
+            
+            <a id="send_btn" onclick="yaCounter22918723.reachGoal('callBack'); return true;" class="" href="#" value="Отправить">Отправить</a>
+          </div>
+		  
+        </div>
+      </div>
+    </div>
 <header> 
   <div class="container back">
     <div class="row top-content">
@@ -53,7 +93,39 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
           
-      
+        <li><a href="/"><span>Главная</span></a></li>
+         <li class="dropdown">
+      <a class="dropdown-toggle visible-xs visible-sm" data-toggle="dropdown" href="javascript:void(0);">Строительство <span class="caret"></span></a>
+      <a class="dropdown-toggle hidden-xs hidden-sm" href="javascript:void(0);">Строительство <span class="caret"></span></a>
+          <ul class="dropdown-menu text-dropdown-menu" role="menu">
+          <li><a href="<?php echo HTTP_SERVER;?>zabivka-svay/">Сваебойные работы</a></li>
+            <li><a href="<?php echo HTTP_SERVER;?>grazhdanskoe-stroitelstvo/">Гражданское строительство</a></li>
+			<li><a href="<?php echo HTTP_SERVER;?>promyshlennoe-stroitelstvo/">Промышленное строительство</a></li>
+			<li><a href="<?php echo HTTP_SERVER;?>zheleznodorozhnoe-stroitelstvo/">Железнодорожное строительство</a></li>
+			
+          </ul>
+        </li>
+        <li><a href="<?php echo HTTP_SERVER;?>arenda-spectehniki/"><span>Аренда спецтехники</span></a></li>
+
+        <li><a href="<?php echo HTTP_SERVER;?>objects/" id="one"><span>Объекты</span></a></li>
+		<li class="dropdown">
+      <a class="dropdown-toggle visible-xs visible-sm" data-toggle="dropdown" href="javascript:void(0);">Лицензии <span class="caret"></span></a>
+      <a class="dropdown-toggle hidden-xs hidden-sm" href="javascript:void(0);">Лицензии <span class="caret"></span></a>
+		  <ul class="dropdown-menu text-dropdown-menu" role="menu">
+            <li><a href="<?php echo HTTP_SERVER;?>licenses/smp245/">СМП-245</a></li>
+			<li><a href="<?php echo HTTP_SERVER;?>licenses/smp245-energy/">СМП-245 Энерго</a></li>
+			<li><a href="<?php echo HTTP_SERVER;?>licenses/" target="_blank">ЦПОиР</a></li>
+          </ul>
+		</li>
+        <li><a href="<?php echo HTTP_SERVER;?>contacts/"><span>Контакты</span></a></li>
+        <li><a href="http://xn--h1alcg0a.xn--p1ai/" rel="nofollow" target="_blank"><span>Проектные работы</span></a></li>   
+       </ul> 
+    </div>
+  </div>
+</nav>
+</div>
+</div>
+<section id="pixroll">
 	<div class="pixroll-wrapper">
 		<ul class="pixroll-images">
 			<li><div><img src="img/slide1.jpg" alt=""></div></li>
@@ -163,7 +235,25 @@
 <div class="container objects">
   <div class="">
    <h2 class="h2">Построенные объекты</h2>
- 
+  <div id="images" class="center-block">
+				<div id="a" class="col-md-3 col-sm-6 col-xs-12" style="padding:0;">
+				    <img src="img/27.jpg" alt="car1" class="img-responsive" />
+					<a class="fancybox-thumb" rel="gallery1" href="img/27.jpg" title="Возведение платины №2, №3 г.Goodwill, Ковровский район"><span>Гидросооружения. Возведение платины №2, №3 г.Goodwill, Ковровский район</span></a>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12" style="padding:0;">
+					<img src="img/28.jpg" alt="car2" class="img-responsive" />
+					<a class="fancybox-thumb" rel="gallery1" href="img/28.jpg" title="Строительство мостового перехода через р.Ока с обходом г.Муром (II очередь)"><span>Строительство мостового перехода через р.Ока с обходом г.Муром (IIочередь)</span></a>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12" style="padding:0;">
+					<img src="img/29.jpg" alt="car5" class="img-responsive" />
+					<a class="fancybox-thumb" rel="gallery1" href="img/29.jpg" title="Автоцентр "Рено", г.Ковров"><span>Строительство автоцентра "Рено", г.Ковров. Выполнен комплекс общестроительных работ: монтаж несущих конструкций, ограждающих стеновых конструкций, кровля на основе мембранной пленки.</span></a>
+				</div>
+				<div class="col-md-3 col-sm-6 col-xs-12" style="padding:0;">
+					<img src="img/30.jpg" alt="car6" class="img-responsive" />
+					<a class="fancybox-thumb" rel="gallery1" href="img/30.jpg" title="Нежилое строение ООО «Аскона»"><span>Нежилое строение «Производство полиэтиленовой пленки и синтепона», ООО «Аскона», г. Ковров, Владимирская область. Выполнен полный комплекс строительных работ: фундамент, каркас, кровля, промышленные топинговые полы.</span></a>
+				</div>
+
+			</div>
 
   
   </div>
@@ -197,6 +287,7 @@
      </form>
    </div>
 </div>
+
 <footer>
 	<div class="container">
 		<div class="col-md-4">
@@ -378,4 +469,3 @@ $(function () {
 
   </body>
 </html>
-

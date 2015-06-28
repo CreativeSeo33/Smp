@@ -6,6 +6,6 @@ beget:
     pass: 1!^s04{b
     check: true
     path:
-        local: /
+        local: release/
         remote: /vptorg.ru/public_html/
 
