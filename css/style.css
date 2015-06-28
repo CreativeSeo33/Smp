@@ -23,6 +23,9 @@ nav ul li a { font-size:14px; color:#31434e; font-weight:400; }
 .navbar-default {
   background-color: #0D1E32;
 }
+.navbar-default {
+  background-color: #0D1E32;
+}
 
 .text-dropdown-menu {background-color:#0D1E32;color:#fff}
 li.dropdown {background-color:#0D1E32 !important;}
