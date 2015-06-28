@@ -62,7 +62,25 @@ module.exports = function (grunt) {
     
     
     }
-  }
+  },
+  
+   critical: {
+    test: {
+        options: {
+			inline: true,
+            base: './',
+			
+            css: [
+                
+                'css/style.min.css'
+            ],
+            width: 320,
+            height: 170
+        },
+        src: 'index.html',
+        dest: 'index-critical.html'
+    }
+}
        
     });
  
@@ -73,7 +91,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-include-replace');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
-    
+    grunt.loadNpmTasks('grunt-critical');
  
-    grunt.registerTask('default', ['htmlmin']);
+    grunt.registerTask('default', ['critical']);
 };
