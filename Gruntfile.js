@@ -48,12 +48,12 @@ module.exports = function (grunt) {
                         
       // Destination directory to copy files to
 	  files: [{
-	  src: ['*/*.html'],
+	  src: ['*/*.html', '!blocks/*.html'],
       dest: '<%= app.dist %>/<%= app.baseurl %>',
-	  cwd: '<%= app.dist %>/<%= app.baseurl %>',
+	  
 	  expand: true},
 	  {
-	  src: ['*.html'],  
+	  src: ['*.html', '!yandex*.html', '!google*.html'],  
       dest: 'release/'	  
 	  }
 	  ]
@@ -74,7 +74,14 @@ module.exports = function (grunt) {
     
     }
   },
-  
+
+borschik: {
+	"paths" : {
+            "./": "/",
+            "css/": "//vptorg.ru/css/"
+        }
+},
+
    critical: {
     test: {
         options: {
@@ -92,7 +99,7 @@ module.exports = function (grunt) {
        files: [{
                     expand: true,
                     cwd: '<%= app.dist %>/<%= app.baseurl %>',
-                    src: ['**/*.html'],
+                    src: ['**/*.html', '!blocks/*.html', '!release/blocks/*.html', '!yandex*.html', '!google*.html' ],
                     dest: '<%= app.dist %>/<%= app.baseurl %>'
                 }]
     }
@@ -108,6 +115,8 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-include-replace');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-critical');
+	grunt.loadNpmTasks('grunt-replace');
+    grunt.loadNpmTasks('grunt-borschik');
  
     grunt.registerTask('default', ['includereplace', 'critical']);
 };

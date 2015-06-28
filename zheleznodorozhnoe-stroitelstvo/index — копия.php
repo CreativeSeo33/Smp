@@ -1,12 +1,5 @@
-<?php $title = 'Железнодорожное строительство'; ?>
-<?php $description = ''; ?>
-<?php $keywords = ''; ?>
-<?php 
-$root = $_SERVER['DOCUMENT_ROOT'];
-include($root."/blocks/meta.php");
-include($root."/blocks/header.php"); 
-?>
-
+@@include('../blocks/meta.html', {"title": "Железнодорожное строительство"})
+@@include('../blocks/header.html'})
 <article>
 <div class="container">
    <div class="row">
@@ -74,4 +67,4 @@ include($root."/blocks/header.php");
    </div><!-- row -->
 </div><!-- container -->
 </article>
-<?php include($root."/blocks/footer.php"); ?>
+@@include('../blocks/footer.html'})
