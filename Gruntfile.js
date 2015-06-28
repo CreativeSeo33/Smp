@@ -138,5 +138,5 @@ connect: {
     grunt.loadNpmTasks('grunt-borschik');
 	grunt.loadNpmTasks('grunt-contrib-connect');
  
-    grunt.registerTask('default', ['includereplace', 'critical']);
+    grunt.registerTask('default', ['includereplace']);
 };
