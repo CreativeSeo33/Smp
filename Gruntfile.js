@@ -42,13 +42,11 @@ module.exports = function (grunt) {
     dist: {
     options: {
       globals: {
-        var1: 'one',
-        var2: 'two',
-        var3: 'three'
+		includesDir: 'inc/'
       },
     },
       // Files to perform replacements and includes with
-      src: '*.html',
+      src: '*/*.html',
       // Destination directory to copy files to
       dest: 'release/',
 	  expand: true
@@ -74,17 +72,22 @@ module.exports = function (grunt) {
     test: {
         options: {
 			inline: true,
-            base: './',
+            base: 'release/',
 			
             css: [
                 
-                'css/style.min.css'
+                'release/css/style.min.css'
             ],
-            width: 320,
-            height: 170
+            width: 1600,
+            height: 1000
         },
-        src: 'index.html',
-        dest: 'index-critical.html'
+		files: [{
+                    expand: true,
+                    cwd: '<%= app.dist %>/<%= app.baseurl %>',
+                    src: ['**/*.html'],
+                    dest: '<%= app.dist %>/<%= app.baseurl %>'
+                }]
+       
     }
 }
        
@@ -99,5 +102,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-critical');
  
-    grunt.registerTask('default', ['includereplace', 'cssmin', 'uglify']);
+    grunt.registerTask('default', ['includereplace', 'critical', 'cssmin', 'uglify']);
 };
